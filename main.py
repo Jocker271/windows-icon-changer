@@ -31,6 +31,7 @@ def set_folder_icon(folder, icon):
         f = open(config, "x")
         f.write("[.ShellClassInfo]\nIconResource=" +  icon + ",0\n[ViewState]\nMode=\nVid=\nFolderType=Generic\n")
         f.close()
+        system("attrib +h +s " + '"' + config + '"')
 
 def set_folder_readonly(folder_path):
     """
